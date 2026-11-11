@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalama - Türkiye'nin Balıkçı Ağı</title>
+    <!-- FontAwesome İkonları -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --primary-dark: #0284c7;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Üst Menü / Navbar */
+        nav {
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .brand {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            letter-spacing: 1px;
+        }
+
+        .brand i {
+            color: var(--primary);
+        }
+
+        /* Ana Karşılama Alanı */
+        .hero {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 5%;
+            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #38bdf8, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.25rem);
+            color: var(--text-muted);
+            max-width: 650px;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        /* Uygulamaya Git Butonu */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 1.2rem 3rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.4);
+        }
+
+        .cta-button:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px -5px rgba(14, 165, 233, 0.6);
+        }
+
+        /* Özellikler Kartları */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 4rem 5%;
+            background-color: var(--bg-dark);
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .feature-card {
+            background-color: var(--bg-card);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: transform 0.3s ease, border-color 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(56, 189, 248, 0.3);
+        }
+
+        .feature-card i {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Alt Bilgi */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="brand">
+            <i class="fa-solid fa-anchor"></i> KALAMA
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Doğada Bir Adım</h1>
+        <p>Türkiye'nin en yenilikçi amatör deniz balıkçılığı platformu. Haritalı meraları incele, hava durumunu analiz et ve yapay zeka asistanınla avını planla.</p>
+        
+        <!-- YÖNLENDİRME BURADA: Vercel yazısı olmadan direkt app.kalama.tr açılacak -->
+        <a href="https://app.kalama.tr" class="cta-button">
+            <i class="fa-solid fa-map-location-dot"></i>
+            Uygulamaya Git
+        </a>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <i class="fa-solid fa-location-crosshairs"></i>
+            <h3>Detaylı Meralar</h3>
+            <p>Marmara, Boğaz (Kandilli - Akıntı Burnu), Karadeniz ve Ege'deki en verimli avlak yerleri ve zemin analizleri.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fa-solid fa-layer-group"></i>
+            <h3>İnteraktif Harita</h3>
+            <p>Rüzgar, dalga ve hava durumu verilerini tek bir ekranda, canlı harita katmanlarıyla takip et.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fa-solid fa-robot"></i>
+            <h3>Yapay Zeka Desteği</h3>
+            <p>Hedef balığa uygun takım, yem seçimi ve av taktikleri için entegre akıllı balıkçı asistanı.</p>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 Kalama.tr | Tüm Hakları Saklıdır
+    </footer>
+
+</body>
+</html>
